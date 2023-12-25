@@ -1,94 +1,68 @@
-<p style="display:flex; justify-content: center">
+# gm-gmblog-backend-admin
 
-</p>
-<p align="center">
-  <a href="https://tdesign.tencent.com/starter/vue-next/#/dashboard/base" target="_blank">
-    <img alt="TDesign Logo" width="200" src="https://tdesign.gtimg.com/starter/brand-logo.svg">
-  </a>
-</p>
+This template should help get you started developing with Vue 3 in Vite.
 
-<p align="center">
-  <a href="https://nodejs.org/en/about/releases/"><img src="https://img.shields.io/node/v/vite.svg" alt="node compatility"></a>
-  <a href="https://github.com/Tencent/tdesign-vue-next/blob/develop/LICENSE">
-    <img src="https://img.shields.io/npm/l/tdesign-vue-next.svg?sanitize=true" alt="License">
-  </a>
-</p>
+## Recommended IDE Setup
 
-English | [简体中文](./README-zh_CN.md) 
-### Introduction
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-TDesign Vue Next Starter is a TDesign-based developed with `Vue 3`, `Vite`, `Pinia`, `TypeScript`. It can be customized theme configuration, and aims to provide project out-of-the-box, configuration-style middle and background projects.
+## Type Support for `.vue` Imports in TS
 
-<p>
-  <a href="http://tdesign.tencent.com/starter/vue-next/">Live Preview</a>
-  ·
-  <a href="https://tdesign.tencent.com/starter/">Documentation</a>
-</p>
+TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
 
-<img src="docs/starter.png">
+If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
 
-### Features
+1. Disable the built-in TypeScript Extension
+    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
+    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
+2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
 
-- Various provided pages for develop
-- Complete directory structure for develop
-- Code specification configuration
-- Support dark mode
-- Custom theme colors
-- Various space layouts
-- Mock data scheme
+## Customize configuration
 
-### Usage
+See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-> Initialize project with our CLI tool `tdesign-starter-cli` 
+## Project Setup
 
-```bash
-## install tdesign-starter-cli
-npm i tdesign-starter-cli@latest -g
-
-## create project
-td-starter init
+```sh
+npm install
 ```
 
-### Develop
+### Compile and Hot-Reload for Development
 
-```bash
-## install dependencies
-npm install
-
-## set up
+```sh
 npm run dev
 ```
 
-### Build
+### Type-Check, Compile and Minify for Production
 
-```bash
-## build
+```sh
 npm run build
-
-## build for test
-npm run build:test
 ```
 
+### Run Unit Tests with [Vitest](https://vitest.dev/)
 
-### Contributing Guide
+```sh
+npm run test:unit
+```
 
-We welcome contributions to our project. Create your [Issue](https://github.com/tencent/tdesign-vue-next-starter/issues/new/choose) or Submit your [Pull Request](https://github.com/Tencent/tdesign-vue-next-starter/pulls).
+### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
 
-#### Commit Specification
+```sh
+npm run test:e2e:dev
+```
 
-- [Angular Convention](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular)
-- [Vue Style Guide](https://v3.vuejs.org/style-guide/#rule-categories)
+This runs the end-to-end tests against the Vite development server.
+It is much faster than the production build.
 
-### Browser Support
+But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
 
-| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br> IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Edge >=84                                                                                                                                                                                                        | Firefox >=83                                                                                                                                                                                                      | Chrome >=84                                                                                                                                                                                                   | Safari >=14.1                                                                                                                                                                                                 |
+```sh
+npm run build
+npm run test:e2e
+```
 
-### Community Versions
+### Lint with [ESLint](https://eslint.org/)
 
-There are kinds of community versions of starter-kit based on TDesign Vue Next, visit [community-link](https://tdesign.tencent.com/starter/docs/vue-next/community-link) for more detail. If you developed a community versions of tdesign starter, please create a issue or submit a pull request to let us know 😊.
-
-### License
-
-The MIT License. Please see [the license file](LICENSE) for more information.
+```sh
+npm run lint
+```
