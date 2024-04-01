@@ -12,6 +12,17 @@ const router = createRouter({
       path: '/editor',
       name: 'editor',
       component: () => import('../views/EditorView.vue')
+    },
+    {
+      path: "/snippets",
+      name: "snippets",
+      children: [
+        {
+          path: "stretchandzoom",
+          name: "snippets",
+          component: () => import("@/snippets/StretchAndZoom.vue")
+        }
+      ]
     }
   ]
 })
