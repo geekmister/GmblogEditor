@@ -5,13 +5,12 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'login',
-      component: () => import("@/views/LoginView.vue")
+      redirect: '/index'
     },
     {
-      path: '/editor',
-      name: 'editor',
-      component: () => import('../views/EditorView.vue')
+      path: '/index',
+      name: 'index',
+      component: () => import('../views/IndexView.vue')
     },
     {
       path: "/snippets",
